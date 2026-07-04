@@ -1,15 +1,12 @@
-name: satyam-pipeline
+name: satyam
 on:
   workflow_dispatch:
 jobs:
-  name: deploy to staging
-  runs-on: ubuntu-22.04
-  steps:
-  - name: checkout
-    uses: actions/checkout@v4.0.0
-  - name: linux
-    run: |
-      pwd
-      ls
-      whoami
-      echo "good morning"
+  my_job:
+    name: deploy
+    runs-on: ubuntu-22.04
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.0.0
+    - name: linux
+      run: whoami
